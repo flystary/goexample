@@ -1,0 +1,25 @@
+syntax = "proto3";  // 协议为proto3
+
+package spider;  // 包名
+option go_package = "./;spider";
+// 发送请求
+message SendAddress {
+  // 发送的参数字段
+  // 参数类型 参数名 标识号(不可重复)
+  string address = 1;  // 要请求的地址
+  string method = 2;  // 请求方式
+}
+
+// 返回响应
+message GetResponse {
+  // 接收的参数字段
+  // 参数类型 参数名 标识号
+  int32 httpCode = 1;  // http状态码
+  string response = 2;  // 返回体
+}
+
+// 定义服务,可定义多个服务,每个服务可多个接口
+service GoSpider {
+  // rpc请求 请求的函数 (发送请求参数) returns (返回响应的参数)
+  rpc GetAddressResponse (SendAddress) returns (GetResponse);
+}

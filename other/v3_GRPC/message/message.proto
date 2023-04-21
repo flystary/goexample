@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package message;
+option go_package = "./;message";
+
+// 加密请求
+message  EncryptionRequest{
+  string str = 1;
+}
+// 加密返回值
+message EncryptionResult{
+  string result = 1;
+}
+
+// 加密service定义, 服务注册
+service EncryptionService {
+  rpc Encryption(EncryptionRequest) returns (EncryptionResult);
+}

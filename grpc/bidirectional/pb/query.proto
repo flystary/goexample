@@ -1,0 +1,20 @@
+syntax = "proto3";
+package pb;
+option go_package= ".;pb";
+
+// 定义查询服务包含的方法
+service Query {
+  // 双向流模式
+  rpc GetAge (stream userInfo) returns (stream ageInfo){}
+}
+
+// 请求用的结构体，包含一个name字段
+message userInfo {
+  string name = 1;
+}
+
+// 响应用的结构体，包含一个age字段
+message ageInfo {
+  int32 age = 1;
+}
+

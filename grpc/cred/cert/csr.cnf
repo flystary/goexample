@@ -1,0 +1,15 @@
+[req]
+prompt = no
+distinguished_name = dn
+req_extensions = ext
+input_password = tian   # 加密私钥的密码
+
+[dn]
+CN = www.shannont.com # Common Name 公用名称
+emailAddress = wanshantian@shannont.com
+O = shannont          # Organization 组织
+L = NJ                # Locality 所在地
+C = CN                # Country 国家，如中国：CN
+
+[ext]
+subjectAltName = DNS:www.shannont.com,DNS:shannont.com,DNS:localhost
