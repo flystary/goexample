@@ -26,7 +26,6 @@ func TestArpMarshalBinary(t *testing.T) {
 		t.Errorf("Received length of %d, expected %d", len(d), len(b))
 	}
 }
-
 func TestArpUnmarshalBinary(t *testing.T) {
 	b := "   00 01 " + // HWType
 		"08 00 " + // ProtoType
