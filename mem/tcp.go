@@ -30,5 +30,7 @@ func main() {
 	fmt.Printf("%v\n", unsafe.Sizeof(tcp.UrgFlag))
 	fmt.Printf("%v\n", unsafe.Sizeof(tcp.Data))
 	fmt.Println()
-	fmt.Printf("%v\n", unsafe.Sizeof([]byte{}))
+	// fmt.Printf("%v\n", unsafe.Sizeof([]byte{}))
+	var a  struct{}
+	fmt.Printf("%v\n", unsafe.Sizeof(a))
 }

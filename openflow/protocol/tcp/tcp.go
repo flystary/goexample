@@ -1,4 +1,4 @@
-package main
+package tcp
 
 type TCP struct {
 	PortSrc uint16 // 2
